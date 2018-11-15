@@ -7,11 +7,12 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+      @session = session
+    erb :index  
   end
 
   post '/checkout' do
-    session["name"] = "item"
+    session["item"] = params["item"]
     @session = session
   end
 end
