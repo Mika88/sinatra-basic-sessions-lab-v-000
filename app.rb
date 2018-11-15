@@ -11,6 +11,6 @@ class App < Sinatra::Base
   end
 
   post '/checkout' do
-    erb :index
+    @item = params["item"]
   end
 end
